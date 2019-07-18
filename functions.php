@@ -1,13 +1,9 @@
 <?php
 
 /**
- * Tu sitio WordPress tswp functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package WordPress
- * @subpackage tswp
- * @since 1.0.0
+ *  tswp Tema para el sitio https://tusitiowp.com
+ * 
+ * 
  */
 
 function tswp_scripts()
