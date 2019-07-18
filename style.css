@@ -14,6 +14,8 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width, flexible
 Text Domain: tswp
 */
 /* ********** Custom Properties CSS ********** */
+@import url('style-portada.css');
+
 :root {
 	--main-font: 'Raleway';
 	--alternate-font: sans-serif;
@@ -715,4 +717,4 @@ input#submit:hover {
 	background-color: var(--second-color);
 }
 
-@import url('/css/style-portada.css');
+/* @import url('/css/style-portada.css'); */
