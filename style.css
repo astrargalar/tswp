@@ -1,0 +1,104 @@
+/*!
+Theme Name: Tu sitio WordPress
+Theme URI: https://astrargalar.com
+Author: Paco Silva - Julio, 2019
+Author URI: https://pacosilva.com
+Description : Tema para el sitio principal de tusitiowp.com. Contendrá las secciones, páginas y menús usuales para todos los temas.
+Tema básico con las funcionalidades mínimas para funcionar correctamente.Cambiar las fotos desde las entradas y medios,
+y los logotipos y fondo desde el personalizador.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, theme-options, translation-ready
+Text Domain: tswp
+*/ /* ********** Custom Properties CSS ********** */
+:root {
+	--main-font: 'Raleway';
+	--alternate-font: sans-serif;
+	--font-size: 16px;
+	--line-height: 1.6;
+
+	--main-color: rgb(0, 115, 170);
+	--main-modal-color: rgba(0, 115, 170, 0.75);
+	--second-color: rgb(35, 40, 45);
+	--second-modal-color: rgba(35, 40, 45, 0.75);
+
+	--bg-color: rgb(255, 255, 255);
+	--bg-modal-color: rgba(255, 255, 255, 0.75);
+	--bg-alternate-color: rgb(243, 243, 243);
+	--bg-alternate-modal-color: rgba(243, 243, 243, 0.75);
+	--border-color: #ddd;
+
+	--text-color: #32373c;
+	--title-color: #000;
+
+	--link-color: var(--main-color);
+	--link-hover-color: var(--second-color);
+
+	--max-width: 1200px;
+	--header-height: 4rem;
+
+	--logo-width: 4rem;
+	--logo-height: 4rem;
+	--logo-spacing: 0.5rem;
+}
+
+/* ********** Reset ********** */
+html {
+	box-sizing: border-box;
+	font-family: var(--main-font), var(--alternate-font);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	color: var(--text-color);
+	background-color: var(--bg-modal-color);
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+a {
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--link-color);
+	transition: all 0.3s ease-out;
+}
+
+a:hover {
+	color: var(--link-hover-color);
+}
+
+img {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+
+/* ********** Responsive Video ********** */
+/* https://codepen.io/TechnoBishop/pen/LEVPJw */
+iframe,
+video {
+	width: 100%;
+	height: calc((100vw - 4rem) *(9 / 16));
+	max-height: calc(800px * 9/16);
+}
+
+mark {
+	display: block;
+	padding: 1rem;
+	color: var(--main-color);
+	background-color: var(--second-color);
+}
+
+::selection {
+	background-color: var(--main-color);
+	color: var(--second-color);
+}
