@@ -1,14 +1,13 @@
 <?php
 
 /**
- * tswp Theme functions and definitions
+ * Tu sitio WordPress tswp functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
  * @subpackage tswp
  * @since 1.0.0
- * @version 1.0.0
  */
 
 function tswp_scripts()
