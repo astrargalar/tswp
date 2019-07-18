@@ -714,3 +714,5 @@ input#submit {
 input#submit:hover {
 	background-color: var(--second-color);
 }
+
+@import url('/css/style-portada.css');
