@@ -1,12 +1,17 @@
 <?php
 
 /**
- *  tswp Tema para el sitio https://tusitiowp.com
- * 
- * 
+ * er Theme functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package WordPress
+ * @subpackage er
+ * @since 1.0.0
+ * @version 1.0.0
  */
 
-function tswp_scripts()
+function er_scripts()
 {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Raleway:400,700', array(), '1.0.0', 'all');
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css', array(), '5.6.1', 'all');
@@ -22,24 +27,24 @@ function tswp_scripts()
     endif;
 }
 
-add_action('wp_enqueue_scripts', 'tswp_scripts');
+add_action('wp_enqueue_scripts', 'er_scripts');
 
-function tswp_menus()
+function er_menus()
 {
     register_nav_menus(array(
-        'menu_main' => __('Menú Principal', 'tswp'),
-        'menu_social' => __('Menú Redes Sociales', 'tswp')
+        'menu_main' => __('Menú Principal', 'er'),
+        'menu_social' => __('Menú Redes Sociales', 'er')
     ));
 }
 
-add_action('init', 'tswp_menus');
+add_action('init', 'er_menus');
 
-function tswp_register_sidebars()
+function er_register_sidebars()
 {
     register_sidebar(array(
-        'name' => __('Sidebar Principal', 'tswp'),
+        'name' => __('Sidebar Principal', 'er'),
         'id' => 'sidebar_main',
-        'description' => __('Este es el sidebar principal y aparecerá al lado del contenido principal.', 'tswp'),
+        'description' => __('Este es el sidebar principal y aparecerá al lado del contenido principal.', 'er'),
         'before_widget' => '<article id="%1$s" class="Widget  %2$s">',
         'after_widget' => '</article>',
         'before_title' => '<h3>',
@@ -47,9 +52,9 @@ function tswp_register_sidebars()
     ));
 
     register_sidebar(array(
-        'name' => __('Sidebar del Pié de Página', 'tswp'),
+        'name' => __('Sidebar del Pié de Página', 'er'),
         'id' => 'sidebar_footer',
-        'description' => __('Este es el sidebar del pié de página del sitio.', 'tswp'),
+        'description' => __('Este es el sidebar del pié de página del sitio.', 'er'),
         'before_widget' => '<article id="%1$s" class="Widget  %2$s">',
         'after_widget' => '</article>',
         'before_title' => '<h3>',
@@ -57,9 +62,9 @@ function tswp_register_sidebars()
     ));
 }
 
-add_action('widgets_init', 'tswp_register_sidebars');
+add_action('widgets_init', 'er_register_sidebars');
 
-function tswp_setup()
+function er_setup()
 {
     add_theme_support('post-thumbnails');
 
@@ -86,15 +91,15 @@ function tswp_setup()
     // Habilitar el modo oscuro para el editor
     add_theme_support('editor-styles');
     add_theme_support('dark-editor-style');
-    // WP maneja automáticamente los títulos de las pestañas del navegador
+
     add_theme_support('title-tag');
 
     add_theme_support('automatic-feed-links');
 
-    //remove_action('wp_head', 'wp_generator');
+    remove_action('wp_head', 'wp_generator');
 }
 
-add_action('after_setup_theme', 'tswp_setup');
+add_action('after_setup_theme', 'er_setup');
 
 require_once get_template_directory() . '/inc/custom-header.php';
 

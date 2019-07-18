@@ -1,9 +1,10 @@
 /*!
-Theme Name: Tu sitio WordPress
+Theme Name: tswp
 Theme URI: https://astrargalar.com
 Author: Paco Silva - Julio, 2019
-Author URI: https://pacosilva.com
-Description : Tema para el sitio principal de tusitiowp.com. Contendrá las secciones, páginas y menús usuales para todos los temas.
+Author URI: https://jonmircha.com/
+Description : Basic theme with the minimum functionalities to work correctly.Change the photos from the inputs and media,
+and the logos and background from the customizer.
 Tema básico con las funcionalidades mínimas para funcionar correctamente.Cambiar las fotos desde las entradas y medios,
 y los logotipos y fondo desde el personalizador.
 Version: 1.0.0
@@ -11,7 +12,8 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, theme-options, translation-ready
 Text Domain: tswp
-*/ /* ********** Custom Properties CSS ********** */
+*/
+/* ********** Custom Properties CSS ********** */
 :root {
 	--main-font: 'Raleway';
 	--alternate-font: sans-serif;
@@ -19,14 +21,14 @@ Text Domain: tswp
 	--line-height: 1.6;
 
 	--main-color: rgb(0, 115, 170);
-	--main-modal-color: rgba(0, 115, 170, 0.75);
+	--main-modal-color: rgba(0, 115, 170, .75);
 	--second-color: rgb(35, 40, 45);
-	--second-modal-color: rgba(35, 40, 45, 0.75);
+	--second-modal-color: rgba(35, 40, 45, .75);
 
 	--bg-color: rgb(255, 255, 255);
-	--bg-modal-color: rgba(255, 255, 255, 0.75);
+	--bg-modal-color: rgba(255, 255, 255, .75);
 	--bg-alternate-color: rgb(243, 243, 243);
-	--bg-alternate-modal-color: rgba(243, 243, 243, 0.75);
+	--bg-alternate-modal-color: rgba(243, 243, 243, .75);
 	--border-color: #ddd;
 
 	--text-color: #32373c;
@@ -40,7 +42,7 @@ Text Domain: tswp
 
 	--logo-width: 4rem;
 	--logo-height: 4rem;
-	--logo-spacing: 0.5rem;
+	--logo-spacing: .5rem;
 }
 
 /* ********** Reset ********** */
@@ -69,7 +71,7 @@ a {
 	font-weight: bold;
 	text-decoration: none;
 	color: var(--link-color);
-	transition: all 0.3s ease-out;
+	transition: all .3s ease-out;
 }
 
 a:hover {
@@ -87,7 +89,7 @@ img {
 iframe,
 video {
 	width: 100%;
-	height: calc((100vw - 4rem) *(9 / 16));
+	height: calc((100vw - 4rem) * (9/16));
 	max-height: calc(800px * 9/16);
 }
 
@@ -102,6 +104,7 @@ mark {
 	background-color: var(--main-color);
 	color: var(--second-color);
 }
+
 /* ********** Header ********** */
 .Header {
 	position: fixed;
@@ -131,7 +134,7 @@ mark {
 	font-size: 2rem;
 	text-decoration: none;
 	color: var(--bg-color);
-	transition: all 0.3s ease;
+	transition: all .3s ease;
 }
 
 .Logo a:hover {
@@ -139,7 +142,7 @@ mark {
 }
 
 .Logo img {
-	padding: 0.25rem;
+	padding: .25rem;
 	width: auto;
 	height: var(--header-height);
 }
@@ -168,7 +171,7 @@ mark {
 	width: 100%;
 	overflow-y: auto;
 	background-color: var(--second-modal-color);
-	transition: transform 0.3s ease;
+	transition: transform .3s ease;
 	/* De la derecha */
 	transform: translate(100%, 0);
 	/* De arriba */
@@ -203,7 +206,7 @@ mark {
 	background-color: var(--second-color);
 }
 
-@media screen and(min-width: 64em) {
+@media screen and (min-width: 64em) {
 	.Header-container {
 		margin: auto;
 		max-width: var(--max-width);
@@ -255,18 +258,19 @@ body {
 	min-height: 100vh;
 }
 
-@media screen and(min-width: 64em) {
+@media screen and (min-width: 64em) {
 	body {
 		display: grid;
-		grid-template-columns: 0 2 fr 4 fr 0;
-		grid-template-rows: minmax(var(--header-height), auto) auto 1 fr auto;
-		grid-template-areas: 'wp-header wp-header wp-header wp-header' '. widgets main .' '. . main .'
-			'. footer footer .';
+		grid-template-columns: 0 2fr 4fr 0;
+		grid-template-rows: minmax(var(--header-height), auto) auto 1fr auto;
+		grid-template-areas: 'wp-header wp-header wp-header wp-header' '.         widgets   main      .'
+			'.         .         main      .' '.         footer    footer    .';
 	}
 
 	body.error404 {
-		grid-template-rows: var(--header-height) 1 fr auto;
-		grid-template-areas: 'wp-header wp-header wp-header wp-header' '. main main .' '. footer footer .';
+		grid-template-rows: var(--header-height) 1fr auto;
+		grid-template-areas: 'wp-header wp-header wp-header wp-header' '.         main      main      .'
+			'.         footer    footer    .';
 	}
 
 	.wp-custom-header {
@@ -288,9 +292,9 @@ body {
 	}
 }
 
-@media screen and(min-width: 75em) {
+@media screen and (min-width: 75em) {
 	body {
-		grid-template-columns: 1 fr 300px 900px 1 fr;
+		grid-template-columns: 1fr 300px 900px 1fr;
 	}
 
 	.wp-custom-header {
@@ -321,7 +325,7 @@ body {
 	color: var(--bg-color);
 }
 
-@media screen and(min-width: 64em) {
+@media screen and (min-width: 64em) {
 	.Footer-container {
 		flex-direction: row;
 	}
@@ -387,14 +391,14 @@ body {
 }
 
 /* ********** Widgets ********** */
-@media screen and(min-width: 37.5em) {
+@media screen and (min-width: 37.5em) {
 	.Widgets-container {
 		display: flex;
 		justify-content: space-between;
 	}
 }
 
-@media screen and(min-width: 64em) {
+@media screen and (min-width: 64em) {
 	.Widgets-container {
 		display: block;
 	}
@@ -423,7 +427,7 @@ body {
 }
 
 .search-form .search-field {
-	padding: 0.25rem;
+	padding: .25rem;
 	border: thin solid var(--main-color);
 	outline: 0;
 	font-size: 1rem;
@@ -434,7 +438,7 @@ body {
 
 .search-form .search-submit,
 .u-btn {
-	padding: 0.25rem;
+	padding: .25rem;
 	border: 0;
 	outline: 0;
 	font-size: 1rem;
@@ -443,7 +447,7 @@ body {
 	color: var(--bg-alternate-color);
 	background-color: var(--main-color);
 	cursor: pointer;
-	transition: all 0.3s ease-out;
+	transition: all .3s ease-out;
 }
 
 .search-form .search-submit:hover {
@@ -462,7 +466,7 @@ body {
 	border-radius: 50%;
 }
 
-@media screen and(min-width: 30em) {
+@media screen and (min-width: 30em) {
 	.Author-info {
 		flex-direction: row;
 		justify-content: center;
@@ -499,7 +503,7 @@ body {
 }
 
 .u-p0 {
-	padding: 0;
+	padding: 0rem;
 }
 
 .u-p1 {
@@ -524,7 +528,7 @@ body {
 	color: var(--title-color);
 }
 
-@media screen and(min-width: 64em) {
+@media screen and (min-width: 64em) {
 	.u-title {
 		font-size: 2.5vw;
 	}
@@ -543,7 +547,7 @@ body {
 	padding-top: 46px;
 }
 
-@media screen and(min-width: 783px) {
+@media screen and (min-width: 783px) {
 	.admin-bar .Header {
 		top: 32px;
 	}
@@ -551,4 +555,162 @@ body {
 	.admin-bar .Menu {
 		padding-top: 32px;
 	}
+}
+
+@media screen and (min-width: 1024px) {
+	.admin-bar .Header {
+		top: 32px;
+	}
+
+	.admin-bar .Menu {
+		padding-top: 0px;
+	}
+
+	.admin-bar .Widgets {
+		/* padding-top: 32px; */
+		top: calc(var(--header-height) + 32px);
+	}
+}
+
+/* ********** Comments ********** */
+.Comments h3 {
+	font-size: 1.75rem;
+	margin-bottom: 2rem;
+	color: var(--title-color);
+}
+
+/* ********** Comments List WordPress ********** */
+ol.commentlist {
+	list-style: none;
+	margin-bottom: 2rem;
+}
+
+ol.commentlist li {
+	margin-left: 0;
+	margin-bottom: 2rem;
+}
+
+ol.commentlist li.comment {
+	border-bottom: thin dotted var(--main-color);
+	padding: 1em;
+}
+
+ol.commentlist li.comment div.vcard {
+	font-size: 1rem;
+}
+
+ol.commentlist li.comment div.vcard img.avatar {
+	float: right;
+	margin: 0 0 1rem 1rem;
+	border-radius: 50%;
+	max-width: 48px;
+}
+
+ol.commentlist li.comment div.comment-metadata {
+	font-size: .75rem;
+}
+
+ol.commentlist li.comment p {
+	margin-bottom: 1rem;
+}
+
+ol.commentlist li.comment ul {
+	list-style: none;
+	margin: 0 0 1rem 2rem;
+}
+
+ol.commentlist li.comment div.reply {
+	font-size: .75rem;
+}
+
+ol.commentlist li.comment ul.children {
+	list-style: none;
+	margin: 1rem 0 0;
+}
+
+ol.commentlist li.comment ul.children li.depth-2 {
+	margin: 0 0 .25rem .25rem;
+	border-left: medium solid #333;
+}
+
+ol.commentlist li.comment ul.children li.depth-3 {
+	margin: 0 0 .25rem .25rem;
+	border-left: medium solid #555;
+}
+
+ol.commentlist li.comment ul.children li.depth-4 {
+	margin: 0 0 .25rem .25rem;
+	border-left: medium solid #777;
+}
+
+ol.commentlist li.comment ul.children li.depth-5 {
+	margin: 0 0 .25rem .25rem;
+	border-left: medium solid #999;
+}
+
+ol.commentlist li.even {
+	background-color: #fefefe;
+}
+
+ol.commentlist li.odd {
+	background-color: #efefef;
+}
+
+ol.commentlist li.parent {
+	border-left: thick solid #111;
+}
+
+/* ********** Comments Form WordPress ********** */
+form#commentform {
+	padding: 1rem;
+	background-color: var(--bg-color);
+}
+
+form#commentform p {
+	display: flex;
+	flex-direction: column;
+}
+
+form#commentform p.comment-notes {
+	flex-direction: row;
+}
+
+form#commentform label {
+	font-weight: bold;
+}
+
+form#commentform input:not([type="submit"]),
+form#commentform textarea {
+	padding: .5rem;
+	border: thin solid var(--second-color);
+	background-color: var(--bg-alternate-color);
+	color: var(--main-color);
+	font-size: 1rem;
+	font-family: var(--main-font);
+	resize: none;
+}
+
+span.required {
+	color: var(--main-color);
+	font-weight: bold;
+}
+
+input#submit {
+	margin-left: auto;
+	padding: 1rem;
+	width: 50%;
+	font-family: var(--main-font);
+	font-size: 1.25rem;
+	font-weight: bold;
+	background-color: var(--main-color);
+	color: var(--bg-color);
+	cursor: pointer;
+	outline: 0;
+	border: 0;
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+
+input#submit:hover {
+	background-color: var(--second-color);
 }
