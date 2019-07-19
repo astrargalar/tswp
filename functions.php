@@ -55,6 +55,7 @@ function tswp_register_sidebars()
         'name' => __('Sidebar del Pié de Página', 'tswp'),
         'id' => 'sidebar_footer',
         'description' => __('Este es el sidebar del pié de página del sitio.', 'tswp'),
+        'class' =>  'sidebar_pral',
         'before_widget' => '<article id="%1$s" class="Widget  %2$s">',
         'after_widget' => '</article>',
         'before_title' => '<h3>',
@@ -62,7 +63,7 @@ function tswp_register_sidebars()
     ));
 }
 
-add_action('widgets_init', 'tswpr_register_sidebars');
+add_action('widgets_init', 'tswp_register_sidebars');
 
 function tswp_setup()
 {
